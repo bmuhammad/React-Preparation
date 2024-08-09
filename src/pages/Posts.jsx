@@ -34,7 +34,12 @@ async function fetchPosts(userId) {
             <button>← Back</button>
             <div className="post__search--container">
               <label className="post__search--label">Search by Id</label>
-              <input type="number" value={searchId} onChange={(event) => setSearchId(event.target.value)} />
+              <input type="number" value={searchId} onChange={(event) => setSearchId(event.target.value)}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter'){
+                    onSearch();
+                }
+              }} />
               <button onClick={() => onSearch()}>Enter</button>
             </div>
           </div>
