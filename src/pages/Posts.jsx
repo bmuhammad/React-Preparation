@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+//when you want to route programmatically use  useNavigate
+
 import axios from "axios";
 
 const Posts = () => {
+    //let navigate = useNavigate(); go to line 41 for implementation
+    //like this 
+  //  <Link to="/"> old 
+ //   <button>← Back</button>old 
+ // </Link>old
+ //<button onClick={() => navigate('/')>← Back</button> 
+
   const { id } = useParams();
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState();
@@ -38,6 +47,7 @@ const Posts = () => {
           <Link to="/">
             <button>← Back</button>
           </Link>
+
           <div className="post__search--container">
             <label className="post__search--label">Search by Id</label>
             <input
